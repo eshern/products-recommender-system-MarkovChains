@@ -78,7 +78,6 @@ Markov chains were first introduced in 1906 by Andrey Markov, with the goal of s
 
 The Markov assumption greatly simplifies computations of conditional probability, hence, instead of having to condition on the entire past historical products customers already purchased, we only need to condition on the most recent product purchased.
 
-
 **Stochastic Processes**
 
 Stochastic process – a collection of random variables to represent the evolution of some system of random values over time. 
@@ -137,9 +136,13 @@ Question that could be answered by Markov Chains model with DTMC applied as Tran
 
 ## **Conclusion:** 
 
-The solution by modeling a Products Recommender System with Markov Chain could capture sequential patterns and temporal dependencies (different points in time) of a customer's products purchased in sequence. 
+The solution by modeling a Sequential Recommendation System (SRS) of Products with Markov Chain could capture sequential patterns and temporal dependencies (different points in time) of a customer's products purchased. 
 
 This solution allowed seemingly random products purchased in sequence could potentially be opportunity for cross-selling strategy to be applied in products offerings innovation and marketing operations improvement. 
+
+Recommendation System Results (example) based on Markov Chains
+
+![](Sequential_Recommendation_System_of_Products_with_MarkovChain.png)
   
 ### **Limitations and Recommendations for future research directions:**
 
