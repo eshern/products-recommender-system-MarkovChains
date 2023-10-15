@@ -22,14 +22,15 @@ Ecommerce - Modeling a Sequential Recommendation System (SRS) of Products by Mar
 
 ### **Objective:**
 
-Using **`time series Markov chains`** to model and predict system dynamics over time and provide operations decisions/policy for marketing 
-With sample of **`~1.2m customer purchase paths`** over a **`2-months period`**, and would like to analyze the data to help inform a new **`cross-sell sales strategy`**. 
+Using **`time series Markov chains`**, we can model and predict system dynamics over time and provide operations decisions/policy for marketing.
 
-Goal is to explore the data and build a **Simple Markov Chains model** to **predict** which product an existing customer is **most likely to purchase next**.
+With sample of approximately **`1.2m customer purchase paths`** over a **`2-months period`**, we aim to analyze the data to inform a new **`cross-sell sales strategy`**. 
+
+Our goal is to explore the data and build a **Simple Markov Chains model** that can **predict** which product an existing customer is **most likely to purchase next**.
  
-1.	Collect sample data containing customer-level **purchase paths**
-2.	Calculate a **frequency** and **probability matrix** for popular products
-3.	For any **given product**, **predict** the **most likely future purchase**
+1.	We will collect sample data containing customer-level **purchase paths**
+2.	We will calculate a **frequency** and **probability matrix** for popular products
+3.	For any **given product**, we will **predict** the **most likely future next purchase**
    
 ### **Datasets:**
 
