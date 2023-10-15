@@ -66,12 +66,17 @@ Accessible for stakeholders or collaborators with (i.e data engineer/data scient
 With **`-73%`** file size reduction from initial [14.7 GB]
 - Database file (.sqlite): `db_connection_kz_ecommerce_2019-Oct-Nov.sqlite `- [3.9 GB]
 
-## **Origin of Markov Chains**
+## **Origin of Markov Chains and Assumptions**
 
-*Markov chains were first introduced in 1906 by Andrey Markov, with the goal of showing that the Law of Large Numbers does not necessarily require the random variables to be independent.*
+Markov chains were first introduced in 1906 by Andrey Markov, with the goal of showing that the Law of Large Numbers does not necessarily require the random variables to be independent, (e.g. large number of seemingly random purchased products in a sequence could have some degree of dependencies) hence, commonly known as Sequential Recommendation System (SRS) that applied Markov Chain (MC) models for next product prediction, are assumed with following Markov’s properties are met:
 
-To see where the Markov model comes from, consider first an i.i.d. sequence of random variables $X_{0}, X_{1}, X_{2}, . . . , X_{n}$, . . . where we think of n as time. Independence is a very strong assumption: it means that the Xj’s provide no information about each other. At the other extreme, allowing general interactions between the $X_{j}
-’s$ makes it very difficult to compute even basic things. Markov chains are a happy medium between complete independence and complete dependence.
+1. **Memoryless**: The memoryless property implies that the next product a customer is likely to buy depends only on the product they bought most recently, not on their entire purchase history. 
+
+2. **Time Invariant**: And the product’s information typically remains static, and relationship between one product and another does not dynamically change over time.
+
+3. **Transition Probability**: In the context of product purchases from ecommerce website, each purchase can be considered a ‘state’, with ‘sequence of products purchased’ as ‘sequence of states’ in a chain, that exhibit a certain degree of randomness (stochastic) and yet with certain dependencies between each other, described by ‘Transition Probabilities’ as the conditioned probability of purchase the next product. 
+
+The Markov assumption greatly simplifies computations of conditional probability, hence, instead of having to condition on the entire past historical products customers already purchased, we only need to condition on the most recent product purchased.
 
 
 **Stochastic Processes**
