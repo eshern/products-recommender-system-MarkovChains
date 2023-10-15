@@ -91,7 +91,14 @@ $$P_{ij}$$
 
 Define $P = [P_{ij}]$ as the transition probability matrix
 
-*This says that given the history $X_{0}, X_{1}, X_{2},...,X_{n}$, only the most recent term, $X_{n}$, matters for predicting $X_{n+1}$. If we think of time n as the present, times before n as the past, and times after n as the future, the Markov property says that given the present, the past and future are conditionally independent.*
+This says that given the history: 
+$$X_{0}, X_{1}, X_{2},...,X_{n}$$
+Only the most recent term, 
+$$X_{n}$$
+matters for predicting 
+$$X_{n+1}$$
+
+If we think of time n as the present, times before n as the past, and times after n as the future, the Markov property says that given the present, the past and future are conditionally independent.*
 
 *The Markov assumption greatly simplifies computations of conditional probability: instead of having to condition on the entire past, we only need to condition on the most recent value.*
 
