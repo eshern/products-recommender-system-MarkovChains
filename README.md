@@ -20,6 +20,17 @@ Ecommerce - Modeling a Sequential Recommendation System (SRS) of Products by Mar
     - Modeling a Sequential Recommendation System (SRS) of Products with DTMC as Long Term Analysis with Steady State Transition Matrix
 8. References
 
+### **Objective:**
+
+Using **`time series Markov chains`** to model and predict system dynamics over time and provide operations decisions/policy for marketing 
+With sample of **`~1.2m customer purchase paths`** over a **`2-months period`**, and would like to analyze the data to help inform a new **`cross-sell sales strategy`**. 
+
+Goal is to explore the data and build a **Simple Markov Chains model** to **predict** which product an existing customer is **most likely to purchase next**.
+ 
+1.	Collect sample data containing customer-level **purchase paths**
+2.	Calculate a **frequency** and **probability matrix** for popular products
+3.	For any **given product**, **predict** the **most likely future purchase**
+   
 ### **Datasets:**
 
 Initial dataset files with total file size [14.7 GB] from [Kaggle's eCommerce behavior data from multi category store](https://www.kaggle.com/datasets/mkechinov/ecommerce-behavior-data-from-multi-category-store)
