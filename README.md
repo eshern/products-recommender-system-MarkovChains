@@ -89,15 +89,13 @@ $$Pr\{X_{n+1} = j|X_{n} = i, X_{n-1} = i_{0}, X_{n-2} = i_{1}, ···\}$$
 3. **Transition Probability**= 
 $$P_{ij}$$
 
-
 Define $P = [P_{ij}]$ as the transition probability matrix
 
-*This says that given the history $X_{0}, X_{1}, X_{2}, . . . , X_{n}$, only the most recent term, $X_{n}$, matters for predicting $X_{n+1}$. If we think of time n as the present, times before n as the past, and times after n as the future, the Markov property says that given the present, the past and future are conditionally independent.*
+*This says that given the history $X_{0}, X_{1}, X_{2},...,X_{n}$, only the most recent term, $X_{n}$, matters for predicting $X_{n+1}$. If we think of time n as the present, times before n as the past, and times after n as the future, the Markov property says that given the present, the past and future are conditionally independent.*
 
 *The Markov assumption greatly simplifies computations of conditional probability: instead of having to condition on the entire past, we only need to condition on the most recent value.*
 
 reference: [Markov Chains](https://projects.iq.harvard.edu/files/stat110/files/markov_chains_handout.pdf)
-
 
 ### **Modeling a Sequential Recommendation System (SRS) of Products as a `DTMC`**
 
@@ -112,3 +110,69 @@ Hence, the product a user choose to purchase on each 'user_session' can be model
 Question that could be answered by Markov Chains model with DTMC applied as Transient Analysis with Transition Matrix for all 'product_id' product purchase sequence for all 'user_session' as states transition:
 
 - What are the produdct a user most likely to puchase next after a purchased a current product?
+
+## **Conclusion:** 
+
+The solution by modeling a Products Recommender System with Markov Chain could capture sequential patterns and temporal dependencies (different points in time) of a customer's products purchased in sequence. 
+
+This solution allowed seemingly random products purchased in sequence could potentially be opportunity for cross-selling strategy to be applied in products offerings innovation and marketing operations improvement. 
+  
+### **Limitations and Recommendations for future research directions:**
+
+1. The Simple Markov Chains model used doesn’t consider user-specific preferences or semantic information (contents-based) about the products purchased. 
+
+2. The transition matrix may not account for changes in customer behavior over time or the introduction of new products, and its only sampled between 2019-Oct ~ Nov, therefore, it’s crucial to regularly update the transition probability matrix with new data to ensure its accuracy and relevance.
+
+3. Since there are many zero probabilities between certain product pairs, it might indicate sparse data, which could make predictions less reliable. In such cases, techniques like adding a small constant to all probabilities (smoothing) or more complex methods like matrix factorization might be used to handle the sparsity more effectively.
+
+4. Include Action Set (A) which is the set of all possible actions that can be performed by the use, that could include "viewing" a product, adding a product to the "cart", or making a "purchase". 
+
+5. Improve performance with performance metrics that can be used to evaluate and compare the performance of models in recommender systems, examples metrics are Precision, Recall, F1-score, MAP (Mean Average Precision), Normalized Discounted Cumulative Gain (NDCG).
+
+## **Futher Discussion:**
+
+### **Modeling a Sequential Recommendation System (SRS) of Products with DTMC as Long Term Analysis with Steady State Transition Matrix**
+
+The steady-state probabilities then represent the long-term likelihood of each product being purchased, hence, the question that could be answered by Markov Chains model with DTMC applied as Long Term Analysis with Steady State Transition Matrix:
+
+- What is the customer lifetime value (CLV) which is total revenue a ecommerce business can reasonably expect from a single customer account throughout the business relationship?
+
+To compute the **`steady-state probabilities`** by finding the **`eigenvector`** of the **transition matrix** that corresponds to an **`eigenvalue of 1`**. This can be useful in `predicting long-term trends` or `behaviors` in the `system`. 
+
+This **`eigenvector`** gives us the **`steady-state probabilities`**
+
+However, **`not all Markov chains have a steady state`**.
+
+For instance, if there are **`transient states`** (states that once left cannot be returned to), or if there are **`periodic states`** (states where the chain can return only **`after a fixed number of steps`**), then a steady state may not exist. In such cases, a steady-state analysis would not be meaningful.
+
+- Theorem 1: A finite-state irreducible aperiodic DTMC has a unique $\pi$ (limiting distribution).
+- Theorem 2: If a DTMC is both positive recurrent and aperiodic, then it is ergodic. Ergodicity guarantees the existence of $\pi$.
+
+A Markov chain can be ergodic, if it is possible to go from `any state to every other state` in `finitely many moves`
+
+
+**What if the chain doesn’t reach a steady-state?**
+
+1. Only regular Markov chains converge over time. 
+    - It is considered regular if `some power` of the `transition matrix` has `only positive`, `non-zero, values`
+2. And if Markov Chain does not converge, it has a `periodic pattern`.
+    - will get the same transition probabilities from time to time.
+3. Test if Markov chain will eventually converge.
+    - For any *`n x n`* transition matrix, could check if `all powers` of the `transition matrix` have all positive, non-zero, values, up to power: $\max_{power} = (n - 1)^{2} + 1$
+
+reference: 
+[Markov Models and Cost Effectiveness Analysis Applications in Medical Research, Springer](https://link.springer.com/chapter/10.1007/978-3-319-43742-2_24)
+
+## **References:**
+
+1. Steffen Rendle, Christoph Freudenthaler, and Lars Schmidt-Thieme. 2010. "**Factorizing personalized Markov chains for next-basket recommendation**". In Proceedings of the 19th international conference on World wide web (WWW '10). Association for Computing Machinery, New York, NY, USA, 811–820. https://doi.org/10.1145/1772690.1772773 
+
+2. Y. Yang, H. -J. Jang and B. Kim, "**A Hybrid Recommender System for Sequential Recommendation: Combining Similarity Models With Markov Chains**" in IEEE Access, vol. 8, pp. 190136-190146 (2020), https://doi.org/10.1109/ACCESS.2020.3027380  
+
+3. Lonjarret, C., Auburtin, R., Robardet, C. et al. "**Sequential recommendation with metric models based on frequent sequences**". Data Min Knowl Disc 35, 1087–1133 (2021). https://doi.org/10.1007/s10618-021-00744-w 
+
+4. Chen G, Li Z. "**A New Method Combining Pattern Prediction and Preference Prediction for Next Basket Recommendation**" Entropy (Basel); 23(11):1430. (2021) https://doi.org/10.3390/e23111430 
+
+5. Chen, Xin, Alex Reibman, and Sanjay Arora. "**Sequential Recommendation Model for Next Purchase Prediction**" arXiv preprint arXiv:2207.06225 (2022). https://doi.org/10.48550/arXiv.2207.06225 
+
+
