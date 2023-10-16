@@ -132,7 +132,7 @@ Hence, the product a user choose to purchase on each 'user_session' can be model
 
 Question that could be answered by Markov Chains model with DTMC applied as Transient Analysis with Transition Matrix for all 'product_id' product purchase sequence for all 'user_session' as states transition:
 
-- What are the produdct a user most likely to puchase next after a purchased a current product?
+- What are the products a user most likely to puchase next after a purchased a current product?
 
 ## **Conclusion:** 
 
