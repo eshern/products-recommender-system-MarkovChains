@@ -144,17 +144,18 @@ Recommendation System Results (example) based on Markov Chains
 
 ![](Sequential_Recommendation_System_of_Products_with_MarkovChain.png)
   
-### **Limitations and Recommendations for future research directions:**
+## **Limitations and Recommendations for future research directions**
 
-1. The Simple Markov Chains model used doesn’t consider user-specific preferences or semantic information (contents-based) about the products purchased. 
+1. The Simple Markov Chains model used doesn’t consider **user-specific preferences** or **semantic information (contents-based)** about the products purchased. 
 
-2. The transition matrix may not account for changes in customer behavior over time or the introduction of new products, and its only sampled between 2019-Oct ~ Nov, therefore, it’s crucial to regularly update the transition probability matrix with new data to ensure its accuracy and relevance.
+2. The transition matrix **may not account for changes in customer behavior over time** or the introduction of new products, and its only sampled between 2019-Oct ~ Nov, therefore, it’s crucial to regularly update the transition probability matrix with new data to ensure its accuracy and relevance.
 
-3. Since there are many zero probabilities between certain product pairs, it might indicate sparse data, which could make predictions less reliable. In such cases, techniques like adding a small constant to all probabilities (smoothing) or more complex methods like matrix factorization might be used to handle the sparsity more effectively.
+3. Since there are many zero probabilities between certain product pairs, it might indicate **sparse data**, which could make predictions less reliable. In such cases, techniques like adding a small constant to all probabilities (smoothing) or more complex methods like **matrix factorization** might be used to **handle the sparsity more effectively**.
 
-4. Include Action Set (A) which is the set of all possible actions that can be performed by the use, that could include "viewing" a product, adding a product to the "cart", or making a "purchase". 
+4. Include Action Set (A) which is the set of all possible actions that can be performed by the use, that could include **“viewing”** a product, adding a product to the **“cart”**, or making a **“purchase”**. 
 
-5. Improve performance with performance metrics that can be used to evaluate and compare the performance of models in recommender systems, examples metrics are Precision, Recall, F1-score, MAP (Mean Average Precision), Normalized Discounted Cumulative Gain (NDCG).
+5. Improve performance with performance metrics that can be used to evaluate and compare the performance of models in recommender systems, examples metrics are **Precision, Recall, F1-score, MAP (Mean Average Precision), Normalized Discounted Cumulative Gain (NDCG).**
+
 
 ## **Futher Discussion:**
 
@@ -189,18 +190,6 @@ A Markov chain can be ergodic, if it is possible to go from `any state to every 
 
 reference: 
 [Markov Models and Cost Effectiveness Analysis Applications in Medical Research, Springer](https://link.springer.com/chapter/10.1007/978-3-319-43742-2_24)
-
-## **Limitations and Recommendations for future research directions**
-
-1. The Simple Markov Chains model used doesn’t consider **user-specific preferences** or **semantic information (contents-based)** about the products purchased. 
-
-2. The transition matrix **may not account for changes in customer behavior over time** or the introduction of new products, and its only sampled between 2019-Oct ~ Nov, therefore, it’s crucial to regularly update the transition probability matrix with new data to ensure its accuracy and relevance.
-
-3. Since there are many zero probabilities between certain product pairs, it might indicate **sparse data**, which could make predictions less reliable. In such cases, techniques like adding a small constant to all probabilities (smoothing) or more complex methods like **matrix factorization** might be used to **handle the sparsity more effectively**.
-
-4. Include Action Set (A) which is the set of all possible actions that can be performed by the use, that could include **“viewing”** a product, adding a product to the **“cart”**, or making a **“purchase”**. 
-
-5. Improve performance with performance metrics that can be used to evaluate and compare the performance of models in recommender systems, examples metrics are **Precision, Recall, F1-score, MAP (Mean Average Precision), Normalized Discounted Cumulative Gain (NDCG).**
 
 ## **References:**
 
